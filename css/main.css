@@ -67,17 +67,15 @@ nav ul li a:hover{
     opacity: 0.7;
     transition: 0.1s;
 }
-nav ul li button{
+button{
     padding: 12px 20px;
     background-color: #0519CF;
     color: white;
     border: none;
     border-radius: 5px;
     text-transform: uppercase;
-   
-    
 }
-nav ul li button:hover{
+button:hover{
     color: white;
     cursor: pointer;
     scale: 1.05;
@@ -114,6 +112,8 @@ nav ul li button a{
     background-size: cover;
     background-position: 20% 25%;
     background-repeat: no-repeat;
+    display: flex;
+    justify-content: space-between;
 
 }
 .grid-item:nth-child(2){
@@ -154,6 +154,7 @@ nav ul li button a{
     transition: .1s;
     font-size: 15px;
     width: fit-content;
+    color: #000;
 }
 .grid-item:nth-child(2) button:hover{
    background-color: #000;
@@ -190,7 +191,7 @@ nav ul li button a{
     transition: .1s;
 }
 .grid-item:nth-child(3) .radiante-img-container img:hover{
-   scale: 1.6;
+   scale: 1.4;
    transition: .1s;
 }
 .grid-item:nth-child(4){
@@ -320,6 +321,63 @@ nav ul li button a{
 .splide__arrow{
     background: none;
 }
+.splide__arrow--prev{
+   position: absolute;
+   left: -60px;
+}
+.splide__arrow--next{
+    position: absolute;
+    right: -60px;
+}
+.splide__arrows{
+    padding-left: 200px;
+}
+.discord{
+    background-color: #808CFD;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.discord-div{
+    width: 70%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    padding: 32px;
+    margin: 16vh auto;
+    text-align: center;
+}
+.discord-div p{
+    font-family: "Geist", "sans-serif";
+    padding-bottom: 2vh;
+    font-size: 3vh;
+}
+.discord-div h1{
+    font-size: 8vh;
+}
+.discord-div h1 span{
+    color: #0519CF;
+}
+.discord-div button{
+    padding: 2vh;
+    width: 18vh;
+    margin-top: 2vh;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 16px;
+}
+.discord-div button:hover{
+    opacity: 0.6;
+}
+.discord-div button img{
+    width: 4vh;
+    padding-right: 1vh;
+}
+
+
 
 
 
