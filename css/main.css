@@ -91,6 +91,7 @@ nav ul li button a{
     display: flex;
     align-items: center;
     padding-left: 6vh;
+    z-index: -1;
 }
 .name-section h1{
     font-size: 130px;
@@ -113,8 +114,12 @@ nav ul li button a{
     background-position: 20% 25%;
     background-repeat: no-repeat;
     display: flex;
-    justify-content: space-between;
-
+    justify-content: center;
+    z-index: -1;
+}
+.grid-item:nth-child(1) img{
+   scale: 1.25;
+   z-index: 999;
 }
 .grid-item:nth-child(2){
     display: flex;
@@ -351,10 +356,12 @@ nav ul li button a{
 .discord-div p{
     font-family: "Geist", "sans-serif";
     padding-bottom: 2vh;
-    font-size: 3vh;
+    font-size: 2.7vh;
 }
 .discord-div h1{
     font-size: 8vh;
+    line-height: .97;
+    margin-bottom: 5vh;
 }
 .discord-div h1 span{
     color: #0519CF;
@@ -375,6 +382,20 @@ nav ul li button a{
 .discord-div button img{
     width: 4vh;
     padding-right: 1vh;
+}
+.redes-sociais{
+    display: flex;
+}
+.redes-sociais button{
+    margin-right: 3vh;
+}
+.redes-sociais button:nth-child(5){
+    display: flex;
+    justify-content: left;
+}
+.redes-sociais button:nth-child(5) img{
+    margin-right: 3vh;
+    margin-left: .5vh;
 }
 
 
