@@ -38,4 +38,35 @@ document.addEventListener("DOMContentLoaded", function () {
 
     splide.mount();
   }
+
+  var animatedTitles = document.querySelectorAll(".slide-in-title");
+
+  if (animatedTitles.length) {
+    if ("IntersectionObserver" in window) {
+      var titleObserver = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.remove("is-visible");
+              void entry.target.offsetWidth;
+              entry.target.classList.add("is-visible");
+            } else {
+              entry.target.classList.remove("is-visible");
+            }
+          });
+        },
+        {
+          threshold: 0.35,
+        }
+      );
+
+      animatedTitles.forEach(function (title) {
+        titleObserver.observe(title);
+      });
+    } else {
+      animatedTitles.forEach(function (title) {
+        title.classList.add("is-visible");
+      });
+    }
+  }
 });
