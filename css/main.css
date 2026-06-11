@@ -355,9 +355,27 @@ nav.is-open .menu-toggle span:nth-child(3) {
     transition: transform 0.15s ease;
 }
 
+.agent-reveal {
+    opacity: 0;
+    filter: blur(6px);
+    will-change: transform, opacity, filter;
+}
+
+.agent-from-left {
+    transform: translateX(-46px);
+}
+
+.agent-from-right {
+    transform: translateX(46px);
+}
+
+.agent-reveal.is-visible {
+    animation: agentFadeSlide 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
 @media (hover: hover) {
     .grid-agente img:hover {
-        transform: scale(1.14);
+        transform: scale(1.14) !important;
     }
 }
 
@@ -484,13 +502,24 @@ nav.is-open .menu-toggle span:nth-child(3) {
     }
 }
 
-@media (prefers-reduced-motion: reduce) {
-    .slide-in-title {
+@keyframes agentFadeSlide {
+    to {
         opacity: 1;
+        filter: blur(0);
+        transform: translateX(0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .slide-in-title,
+    .agent-reveal {
+        opacity: 1;
+        filter: none;
         transform: none;
     }
 
-    .slide-in-title.is-visible {
+    .slide-in-title.is-visible,
+    .agent-reveal.is-visible {
         animation: none;
     }
 }

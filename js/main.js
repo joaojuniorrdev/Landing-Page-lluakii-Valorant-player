@@ -69,4 +69,35 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     }
   }
+
+  var animatedAgents = document.querySelectorAll(".agent-reveal");
+
+  if (animatedAgents.length) {
+    if ("IntersectionObserver" in window) {
+      var agentObserver = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.remove("is-visible");
+              void entry.target.offsetWidth;
+              entry.target.classList.add("is-visible");
+            } else {
+              entry.target.classList.remove("is-visible");
+            }
+          });
+        },
+        {
+          threshold: 0.35,
+        }
+      );
+
+      animatedAgents.forEach(function (agent) {
+        agentObserver.observe(agent);
+      });
+    } else {
+      animatedAgents.forEach(function (agent) {
+        agent.classList.add("is-visible");
+      });
+    }
+  }
 });
