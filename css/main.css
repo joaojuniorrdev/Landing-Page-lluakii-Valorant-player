@@ -23,6 +23,7 @@ body {
     overflow-x: hidden;
     color: var(--text);
     background-color: #fff;
+    padding-top: var(--header-height);
 }
 
 img,
@@ -85,10 +86,12 @@ button {
 
 header {
     border-bottom: 1px solid #000;
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
+    width: 100%;
     background-color: #fff;
-    z-index: 20;
+    z-index: 1000;
 }
 
 nav {
@@ -727,9 +730,9 @@ nav.is-open .menu-toggle span:nth-child(3) {
     }
 
     .grid-item:nth-child(1) img {
-        width: min(88%, 430px);
+        width: min(96%, 500px);
         max-height: 100%;
-        transform: scale(1.06);
+        transform: scale(1.12);
     }
 
     .grid-item:nth-child(2),
@@ -840,8 +843,8 @@ nav.is-open .menu-toggle span:nth-child(3) {
     }
 
     .grid-item:nth-child(1) img {
-        width: min(96%, 360px);
-        transform: scale(1.02);
+        width: min(108%, 420px);
+        transform: scale(1.08);
     }
 
     .grid-item:nth-child(2),
